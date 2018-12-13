@@ -42,5 +42,5 @@ private:
 	float m_rotationY = 0.0f;
 	float m_rotationZ = 0.0f;
 
-	float m_scale = 0.0f;
+	float m_scale = 1.0f;
 };

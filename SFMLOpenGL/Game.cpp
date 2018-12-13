@@ -81,6 +81,18 @@ void Game::run()
 						m_rotationY += 1;
 					}
 				}
+				if (event.key.code == Keyboard::A)
+				{
+					m_scale += 0.10f;
+				}
+				if (event.key.code == Keyboard::S)
+				{
+					if (m_scale > 0.10F)
+					{
+						m_scale -= 0.10f;
+					}
+					
+				}
 			}
 		}
 		update();
@@ -164,6 +176,7 @@ void Game::update()
 		m_endPoints[i] = MyMatrix3::rotationX(m_rotationX) * m_endPoints[i];
 		m_endPoints[i] = MyMatrix3::rotationZ(m_rotationZ) * m_endPoints[i];
 		m_endPoints[i] = MyMatrix3::rotationZ(m_rotationY) * m_endPoints[i];
+		m_endPoints[i] = MyMatrix3::scale(m_scale) * m_endPoints[i];
 		m_endPoints[i] += m_displacement;
 	}
 
